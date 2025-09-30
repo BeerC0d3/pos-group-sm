@@ -1,0 +1,148 @@
+// app global css in SCSS form
+// @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800');
+body {
+  margin: 0;
+  // font-family: 'poppins', sans-serif, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Noto Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #888888;
+  // background-color: #f3f6fa;
+  background-color: var(--q-primary);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+// body {
+//   background-color: #eaedf2;
+// }
+.modal-message .card-icon-message {
+  position: fixed;
+  z-index: 1003;
+  margin-top: -60px;
+  left: 25%;
+  right: 25%;
+}
+.border-modal-message {
+  border-radius: 20px !important;
+}
+
+// page
+.page {
+  z-index: 2000;
+  &-header {
+    &-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 12px;
+    }
+  }
+  &-body {
+    &-spacer {
+      &-header {
+        height: 51px;
+      }
+      &-footer {
+        height: 73px;
+      }
+    }
+  }
+}
+
+// ios notch safe margin & padding
+.platform-ios.cordova {
+  .q-footer {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .page-body-spacer {
+    &-header {
+      margin-top: constant(safe-area-inset-top);
+      margin-top: env(safe-area-inset-top);
+    }
+    &-footer {
+      margin-bottom: constant(safe-area-inset-bottom);
+      margin-bottom: env(safe-area-inset-bottom);
+    }
+  }
+}
+
+// page nudger
+.q-layout:not(.ios-browser-swiping-back) {
+  .page-nudger {
+    transition: transform 0.4s;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0);
+      transition: background 0.4s;
+      z-index: 2000;
+      pointer-events: none;
+    }
+    &.nudge-left {
+      transform: translateX(-60px);
+      &:after {
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
+
+// transitions
+.slideInRight,
+.bounceOutDown {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+@media (min-width: 1200px) {
+  .container-template {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 992px) {
+  .container-template {
+    max-width: 960px;
+  }
+}
+@media (min-width: 768px) {
+  .container-template {
+    max-width: 720px;
+  }
+}
+@media (min-width: 576px) {
+  .container-template {
+    max-width: 540px;
+  }
+}
+.container-template {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bg-footer {
+  // background-color: #00549a;
+  background-color: #fff;
+  color: #3f51b5;
+}
+.footer-shadow {
+  box-shadow: 0 12px 26px 0 rgba(0, 0, 0, 0.3);
+}
+.header-shadow {
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+}
+.footer-radius-10 {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.q-tab--active {
+  color: var(--q-warning);
+}
+.q-layout__section--marginal {
+  background-color: var(--q-primary) !important;
+  color: var(--q-info);
+}

@@ -1,0 +1,182 @@
+.auth-header {
+  position: relative;
+  background-color: #09158d;
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1001;
+}
+.auth-form {
+  background-color: rgba(255, 255, 255);
+  // border: 1px solid rgba(255, 255, 255);
+  border-radius: 15px 15px 15px 15px;
+  margin-top: -120px;
+  padding-top: 35px;
+  padding-bottom: 40px;
+  position: relative;
+  width: 100%;
+  z-index: 1002;
+}
+.auth-header .img {
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+  z-index: 1;
+  width: calc(115px + 10 * (100vw - 320px) / 447);
+}
+.container-template {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.auth-header .auth-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  color: #ffc502;
+  padding: 0 20px 40px;
+}
+.card-icon-message {
+  position: absolute;
+  z-index: 1005;
+  margin-bottom: -70px;
+  /* left: 25%;
+  right: 25%; */
+  background-color: #fff;
+  padding: 5px;
+  margin-left: 40%;
+  min-height: 1.4em;
+  min-width: 1.4em;
+  border-radius: 50%;
+}
+.border-modal-message {
+  border-radius: 20px !important;
+}
+.bg-btn {
+  background: rgb(131, 58, 180) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 4%,
+    rgba(252, 176, 69, 1) 100%
+  ) !important;
+}
+.auth-image .img {
+  position: absolute;
+  right: 20px;
+  bottom: 350px;
+  z-index: 1;
+  width: calc(115px + 10 * (100vw - 320px) / 447);
+}
+.img-login {
+  max-width: 140px;
+  height: 72px;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+}
+.fw-400 {
+  font-weight: 400;
+}
+.mt-24 {
+  margin-top: 24px !important;
+}
+.md-font-zen {
+  color: #12151c;
+  font-size: 26px;
+  font-style: normal;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+//other version
+
+.let-you-page-main {
+  position: relative;
+  background-color: var(--q-primary);
+  height: 100vh;
+}
+.let-you-screen-main {
+  // background-image: url(https://up2client.com/envato/amigo-chatgpt-pwa/main-file/assets/images/let-you-screen-main-img.jpg);
+  // background-repeat: no-repeat;
+  background-position: top center;
+  height: 375px;
+  position: relative;
+  background-color: var(--q-secondary);
+}
+.logo_img_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+.logo_img {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 24px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+.back-btn2 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.back-btn {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+}
+.footer_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6f5fe;
+}
+.lets_you_in_box {
+  padding: 32px 16px;
+  background-color: #fff;
+  border-radius: 24px;
+  z-index: 50;
+  position: absolute;
+  width: calc(100% - 24px);
+  transform: translate(0%, 50%);
+}
+.lets_you_in_box3 {
+  top: 45px;
+}
+.lets_you_in_text {
+  text-align: center;
+  color: #0f0f0f;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 36px;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.h-100 {
+  height: 100vh !important;
+}
+.sign-in-area {
+  padding: 32px 24px;
+  text-align: center;
+}
+.heading-2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+}
