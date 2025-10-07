@@ -22,7 +22,7 @@
     </q-card-section>
   </q-card>
 </template>
-<script setup lang="ts">
+<script lang="ts" setup>
 import { PropType } from 'vue';
 import { IProductView } from 'src/app/Models/Pos/IPos';
 

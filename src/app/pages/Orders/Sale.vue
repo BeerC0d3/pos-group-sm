@@ -28,7 +28,7 @@
   </q-layout>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref, computed, watch } from 'vue';
 import { useQuasar } from 'quasar';
 import useProduct from 'src/app/components/Pos/product.vue';

@@ -8,6 +8,7 @@
     </ul>
   </div>
 </template>
+
 <style>
 .view-total {
   border-top: 2px dashed #e8eff3;

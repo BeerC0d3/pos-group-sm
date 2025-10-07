@@ -4,8 +4,8 @@
     v-model="posDrawer"
     side="left"
     :width="120"
-    @hide="(value) => ShowHidden(value)"
-    class="bg-primary"
+    @hide="(value) => ShowHidden()"
+    class="bg-left"
   >
     <q-scroll-area class="scroll-content">
       <q-btn
@@ -31,10 +31,9 @@
 import { ref, watch, computed } from 'vue';
 import { usePosDrawer } from 'src/stores/all';
 const posDrawer = ref(false);
-const isSelected = ref(false);
 
 const $posDrawerStore = usePosDrawer();
-const ShowHidden = (evt: any) => {
+const ShowHidden = () => {
   $posDrawerStore.setToggle('Left');
 };
 const isOpenDrawer = computed(() => $posDrawerStore.getLeftDrawer);
@@ -46,3 +45,8 @@ watch(
   }
 );
 </script>
+<style>
+.bg-left {
+  background-color: #363653 !important;
+}
+</style>

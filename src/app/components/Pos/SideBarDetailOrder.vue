@@ -3,15 +3,15 @@
     show-if-above
     v-model="posRDrawer"
     side="right"
-    @hide="(value) => ShowHidden(value)"
+    @hide="(value) => ShowHidden()"
     :width="270"
-    class="bg-primary"
+    class="bg-right"
   >
     <q-scroll-area class="scroll-content height-cart">
       <q-card
         class="my-card q-mb-xs card-bg card-border"
         flat
-        v-for="i in 10"
+        v-for="i in 1"
         :key="i"
       >
         <q-item>
@@ -72,9 +72,8 @@
       <q-btn
         unelevated
         rounded
-        color="accent"
         label="Cobrar"
-        class="full-width"
+        class="full-width bg-btn-yellow"
         no-caps
       />
     </div>
@@ -88,7 +87,7 @@ const posRDrawer = ref(false);
 const text = ref('2');
 
 const $posDrawerStore = usePosDrawer();
-const ShowHidden = (evt: any) => {
+const ShowHidden = () => {
   $posDrawerStore.setToggle('Right');
 };
 const isOpenRDrawer = computed(() => $posDrawerStore.getRightDrawer);
@@ -106,5 +105,8 @@ watch(
 }
 .card-border {
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.bg-right {
+  background-color: #363653 !important;
 }
 </style>

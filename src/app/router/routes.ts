@@ -2,13 +2,13 @@ export default [
   {
     path: '/app',
     component: () => import('../layouts/AppLayout.vue'),
-    meta: { requireLogin: false },
+    meta: { requireLogin: true },
     children: [
       { path: '', redirect: '/app/Home' },
       {
         path: 'Home',
         component: () => import('../pages/Home.vue'),
-        //meta: { requireLogin: true },
+        meta: { requireLogin: true },
       },
       {
         path: 'System',

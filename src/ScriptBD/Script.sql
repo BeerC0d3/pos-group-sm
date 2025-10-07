@@ -41,11 +41,11 @@ CreateDate DATE NOT NULL,
 	REFERENCES "System"."Catalog"(Id)
 	)
 
-INSERT INTO "System"."Catalog" (catkey,catname,isdeleted,createdate) 
+INSERT INTO "System"."Catalog" (catkey,catname,isdeleted,createdate)
 VALUES ('TEST', 'Prueba', '0',Now())
 
 
-INSERT INTO "System"."CatalogDetail" (catid,catdetkey,catdetname,isdeleted,createdate) 
+INSERT INTO "System"."CatalogDetail" (catid,catdetkey,catdetname,isdeleted,createdate)
 VALUES (1,null, 'Registro prueba', '0',Now())
 
 
@@ -53,14 +53,14 @@ SELECT NOW();
 
 select * from "System"."Menu" where isdeleted=false
 
---INSERT INTO "System"."Menu" (icon,title,url,rol,parentid,isdeleted,createdate) 
+--INSERT INTO "System"."Menu" (icon,title,url,rol,parentid,isdeleted,createdate)
 --VALUES ('dashboard', 'Inicio', '/','Administrador',0,'0',Now())
 
---INSERT INTO "System"."Menu" (icon,title,url,rol,parentid,isdeleted,createdate) 
---VALUES 
+--INSERT INTO "System"."Menu" (icon,title,url,rol,parentid,isdeleted,createdate)
+--VALUES
 --('fa-solid fa-lock', 'Seguridad', '/','Administrador,Presidente',1,'0',Now()),
 --('fa-solid fa-users', 'Gestión Usuarios', '/app/Usuarios','Administrador,Presidente',2,'0',Now());
-   
+
 --insert into "System"."Menu" (Icon,Title,Url,Rol,ParentId,IsDeleted,CreateDate)
 --values('dashboard','Inicio','/','Administrador',0,0,NOW());
 
@@ -74,3 +74,11 @@ values('fa-solid fa-list-check','Catalogo detalle','/','Administrador',4,'0',NOW
 
 --update "System"."Menu" set url='/app/system/catalog' where id=5
 
+GRANT USAGE ON SCHEMA "System" TO anon, authenticated, service_role;
+GRANT ALL ON ALL TABLES IN SCHEMA "System" TO anon, authenticated, service_role;
+GRANT ALL ON ALL ROUTINES IN SCHEMA "System" TO anon, authenticated, service_role;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA "System" TO anon, authenticated, service_role;
+
+ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA "System" GRANT ALL ON TABLES TO anon, authenticated, service_role;
+ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA "System" GRANT ALL ON ROUTINES TO anon, authenticated, service_role;
+ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA "System" GRANT ALL ON SEQUENCES TO anon, authenticated, service_role;
