@@ -9,13 +9,11 @@
   >
     <q-scroll-area class="scroll-content">
       <q-btn
-        v-for="i in 10"
-        :key="i"
-        icon="fas fa-tachometer-alt"
-        label="Aguas"
+        :icon="categorieItem.Icon"
+        :label="categorieItem.Name"
         padding="13px xs"
         stack
-        :flat="i == 1 ? false : true"
+        :flat="categorieItem.id == 1 ? false : true"
         color="accent"
         class="full-width"
         no-caps
@@ -28,8 +26,17 @@
   </q-drawer>
 </template>
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, PropType } from 'vue';
+import { ICategorieView } from 'src/app/Models/Pos/IPos';
 import { usePosDrawer } from 'src/stores/all';
+
+const props = defineProps({
+  categorieItem: {
+    type: Object as PropType<ICategorieView>,
+    required: true,
+  },
+});
+
 const posDrawer = ref(false);
 
 const $posDrawerStore = usePosDrawer();

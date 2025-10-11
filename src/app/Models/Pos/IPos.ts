@@ -4,3 +4,8 @@ export interface IProductView {
   price: string;
   image: string;
 }
+export interface ICategorieView {
+  id: number;
+  Icon: string;
+  Name: string;
+}

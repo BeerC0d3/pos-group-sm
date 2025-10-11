@@ -71,12 +71,12 @@ const thumbStyle = ref({
   width: '5px',
 });
 
-const barStyle = ref({
-  right: '2px',
-  borderRadius: '9px',
-  backgroundColor: '#027be3',
-  width: '9px',
-});
+// const barStyle = ref({
+//   right: '2px',
+//   borderRadius: '9px',
+//   backgroundColor: '#027be3',
+//   width: '9px',
+// });
 
 const isShowComputed = computed(() => $modalStore.stateShow);
 watch(

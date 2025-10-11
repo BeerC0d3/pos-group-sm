@@ -1,7 +1,15 @@
 <template>
   <q-layout view="lHr lpr fFr">
     <use-header />
-    <side-bar-categorie />
+    <side-bar-categorie
+      v-for="categorie in listCategorie"
+      :key="categorie.id"
+      :categorie-item="{
+        id: categorie.id,
+        Name: categorie.Name,
+        Icon: categorie.Icon,
+      }"
+    />
     <side-bar-car />
 
     <q-page-container class="bg-info">
@@ -26,19 +34,41 @@
       </q-scroll-area>
     </q-page-container>
   </q-layout>
+  <modal-message :modal="GetModal().value" @close="Hide()" />
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, onBeforeMount } from 'vue';
 import { useQuasar } from 'quasar';
 import useProduct from 'src/app/components/Pos/product.vue';
+import { ICategorieView } from 'src/app/Models/Pos/IPos';
 import useHeader from 'src/app/components/Pos/Header.vue';
 import sideBarCategorie from 'src/app/components/Pos/SideBarCategorie.vue';
 import sideBarCar from 'src/app/components/Pos/SideBarDetailOrder.vue';
 import viewTotalSale from 'src/app/components/Pos/ViewTotalSale.vue';
+import { useCommonStore } from 'src/stores/all';
+import useApi from 'src/app/Composables/UseApi';
+import useModelMessage from 'src/Composables/ModalMessage';
 
 const $q = useQuasar();
+const $commonStore = useCommonStore();
+const { TableToList } = useApi();
+const { Show, Hide, GetModal } = useModelMessage();
+const listCategorie = ref<ICategorieView[]>([]);
 
+const getCategorie = async () => {
+  try {
+    $commonStore.Add_Request();
+    listCategorie.value = await TableToList('pos', 'Categorie');
+    console.log(listCategorie.value);
+  } catch (error: any) {
+    $commonStore.Remove_Request();
+    Show('ERROR', 'Error', error);
+  }
+};
+onBeforeMount(async () => {
+  await getCategorie();
+});
 const products = ref([
   {
     id: 1,
